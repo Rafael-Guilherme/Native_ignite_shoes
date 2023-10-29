@@ -18,23 +18,26 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "rafael.igniteshoesapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "package": "rafael.igniteshoesapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      ["onesignal-expo-plugin",
-      {
-        "mode": "development"
-      }
-    ]
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development"
+        }
+      ]
     ]
   }
 }

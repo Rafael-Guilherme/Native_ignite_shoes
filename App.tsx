@@ -1,7 +1,6 @@
 import { StatusBar } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
-import OneSignal from 'react-native-onesignal';
-import { LogLevel } from 'react-native-onesignal';
+import { LogLevel, OneSignal } from 'react-native-onesignal';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { ONE_SIGNAL_ID } from '@env'
 
@@ -12,7 +11,10 @@ import { Loading } from './src/components/Loading';
 
 import { CartContextProvider } from './src/contexts/CartContext';
 
-OneSignal.setAppId(ONE_SIGNAL_ID)
+OneSignal.Debug.setLogLevel(LogLevel.Verbose)
+OneSignal.initialize(ONE_SIGNAL_ID)
+
+OneSignal.Notifications.requestPermission(true)
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold });
